@@ -435,6 +435,8 @@ const TouchableHighlight = ((createReactClass({
          * error found when Flow v0.89 was deployed. To see the error, delete
          * this comment and run Flow. */
         onResponderTerminate={this.touchableHandleResponderTerminate}
+        clickable={this.props.clickable !== false && this.props.onPress !== undefined}
+        onClick={this.touchableHandlePress}
         nativeID={this.props.nativeID}
         testID={this.props.testID}>
         {React.cloneElement(child, {
