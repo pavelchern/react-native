@@ -212,7 +212,9 @@ const TouchableBounce = ((createReactClass({
         /* $FlowFixMe(>=0.89.0 site=react_native_fb) This comment suppresses an
          * error found when Flow v0.89 was deployed. To see the error, delete
          * this comment and run Flow. */
-        onResponderTerminate={this.touchableHandleResponderTerminate}>
+        onResponderTerminate={this.touchableHandleResponderTerminate}
+        clickable={this.props.clickable !== false && this.props.onPress !== undefined && !this.props.disabled}
+        onClick={this.touchableHandlePress}>
         {this.props.children}
         {Touchable.renderDebugView({
           color: 'orange',
